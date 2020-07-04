@@ -1,0 +1,47 @@
+customer detail works
+
+<!-- {{customername}}{{customerid}} {{customercity}}{{customerstate}} -->
+  <div class="heading">
+       <h4></h4><hr>
+   </div>
+ <div class="row">
+    <div class=" col-md-5 col-lg-4">
+       <img src="{{customerimage}}" style="width:50%;border-radius:95px" >
+    </div>  
+
+    <div class="col-md-6 col-lg-6" >
+      <form-app></form-app>
+        
+    </div>  
+
+    <div class="col-md-2 col-lg-2 " >
+       <div class="btn btn-primary btn-md" *ngIf="true" (click)="edit(customerid)">Edit</div>
+      
+    </div>  
+<!-- orders data  table-->
+      <div class="table-data" >
+            <table class="table table-hover table-bordered" >
+                    <thead>
+                      <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                         <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let orders of customer_orders">
+                      <tr >
+                      
+                        <td>{{orders.itemname}}</td>
+                        <td>{{orders.quantity}}</td>
+                        <td>{{orders.price}}</td>
+                        <td>{{orders.status}}</td>
+                      
+                      </tr>
+
+                    </tbody>
+            </table>
+      </div>
+ </div>
+
+ 

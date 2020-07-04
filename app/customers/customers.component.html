@@ -1,0 +1,60 @@
+customer page works
+{{customer_data[0].name}}
+
+
+<div class="row">
+    <div class="col-lg-10">
+        <h2>Manage Customers</h2>  
+    </div>
+    <div class="col-lg-2">
+        <button  class="btn btn-success btn-lg" routerLink="/add-customer">
+            <i class="glyphicon glyphicon-plus"></i> Add Customer
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3" style="border:2px solid #999; overflow-y:hidden">
+        <!-- Search customers -->
+        <h3>Customers List</h3>
+
+        <!-- <div class="input-group">
+            <input 
+         
+            type="text"
+             
+                  
+                   class="form-control"
+                   
+                   placeholder="Enter search text">
+            <span class="input-group-addon" id="basic-addon1">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+        </div> -->
+<!-- *ngFor="#movie of movies | movieFilter:listFilter.value"  -->
+        <div class="col-sm-12 col-md-12 col-lg-12 customer-row animate" *ngFor="let customer of customer_data , let i=index" >
+          
+              <div class="row" >
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <img src="{{customer.imgurl}}" style="width:80%; border-radius:95px;" >
+                    </div>
+                    
+                      <div class="col-sm-8 col-md-8 col-lg-8">
+                           <!-- <div> <a [routerLink]="['/customers',customer.name]" [queryParams]="{ city: customer.city ,state:customer.state}">{{customer.name}} </a> </div> -->
+                           <div> <a [routerLink]="['/customers',customer.name]">{{customer.name}} </a> 
+                          
+                           </div>
+                           <div>
+                                <span>{{customer.city}},</span> <span>{{customer.state}}</span> <div class="glyphicon glyphicon-trash pull-right" style="cursor:pointer" (click)="delete(i)"> </div>
+                           </div>
+                       </div>                     
+              </div>
+        </div>
+    </div>
+    <div class="col-lg-9" style="border:2px solid #999; overflow-y:auto;">
+       <!-- <router-outlet></router-outlet> -->
+      <customer-detail > </customer-detail>  
+
+            
+    </div>
+</div>

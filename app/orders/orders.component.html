@@ -1,0 +1,28 @@
+      <div class="table-data"  *ngFor="let cd of customer_data" >
+           <div colorchange> {{cd.name}}</div>
+            <table class="table table-hover table-bordered " >
+          
+                    <thead>
+                      <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                         <th>Status</th>
+                         <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let ord of cd.orders" >
+                      
+                        <td>{{ord.itemname}}</td>
+                         <td>{{ord.quantity}}</td>
+                          <td>{{ord.price}}</td>
+                           <td >{{ord.status}}</td>
+                           <td>{{ord.price * ord.quantity}}</td>
+                    
+                      
+                      </tr>
+
+                    </tbody>
+            </table>
+      </div>
